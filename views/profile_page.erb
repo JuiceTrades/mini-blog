@@ -1,0 +1,40 @@
+
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <title>
+      
+            <%= @user.fname %> Feed
+ 
+    </title>
+  </head>
+
+  <body>
+    <% if current_user %>
+     Hello, <%= current_user.fname %>
+    <% end %>
+
+  <h1>
+      
+      <%= @user.fname %>'s Feed
+      
+  </h1>
+    <ul class="feed">
+      <% @user.posts.each do |post| %>
+        <li><a href="/posts/<%= post.id %>"><%= post.body %></a>
+        <% end %>
+    </ul>
+
+
+    <% if session[:user_id] %>
+    <form action="/posts" method="post">
+
+      <label for="body">Body</label>
+      <textarea type="text" name="body" id="body"  ></textarea>
+
+      <br />
+      <br />
+
+      <button type="submit">Create Post</button>
+    </form>
+  <% end %>

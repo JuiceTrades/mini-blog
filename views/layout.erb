@@ -12,6 +12,14 @@
 <body>
 
 
+<%= erb :navbar %>
+
+
+
+<br>
+<br>
+<br>
+<%= flash[:notice] if flash[:notice]  %>
 <%= yield %>
 
 

@@ -8,8 +8,10 @@
   <body>
     <h1>Hello, world!</h1>
     <% if current_user %>
-      Now logged in as: <%= current_user.email %>
+      Now logged in as: <%= current_user.fname %>
     <% end %>
+
+
 
     <% if session[:user_id] %>
       <a href="/sign-out">Log Out</a>
@@ -17,12 +19,14 @@
       <a href="/sign_in">Log In</a>
     <% end %>
 
-    <%= flash[:notice] if flash[:notice]  %>
+
+
 
     <h1>All my posts</h1>
-    <ul>
+    <ul class="main-feed">
       <% @posts.each do |post| %>
-        <li><a href="/posts/<%= post.id %>"><%= post.title %></a> | <a href="/posts/edit/<%= post.id %>">Edit</a> |  <a href="/posts/delete/<%= post.id %>" >delete</a></li> 
+        <li class="all-posts"><%= post.body %></a> 
+        
       <% end %>
     </ul>
 
