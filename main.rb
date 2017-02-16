@@ -113,6 +113,7 @@ get "/sign-out" do
 end
 
 
+
 get "/sign-up" do 
 	erb :signup_form
 end
@@ -125,6 +126,14 @@ post "/sign-up" do
 	redirect "/"
 end
 
+get "/users/delete/:id" do
+	session.clear
+	user = User.find(params[:id]).destroy
+
+	redirect "/"
+
+
+end
 
 get "/users/:id" do
 	

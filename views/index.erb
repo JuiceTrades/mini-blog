@@ -6,35 +6,28 @@
   </head>
 
   <body>
-    <h1>Hello, world!</h1>
-    <% if current_user %>
-      Now logged in as: <%= current_user.fname %>
-    <% end %>
+    <div class="col-md-4">    
+      <h1>Hello, world!</h1>
+      <% if current_user %>
+        Welcome, <%= current_user.fname %>
+        <a href="/users/details/<%= current_user.id %>">Edit Profile</a>
+        <a href="/users/delete/<%= current_user.id %>">Delete Account</a>
+      <% end %>
+
 
   
-      <a href="/users/details/<%= session[:user_id] %>">Edit Profile</a>
 
       <a href="/sign-up">Sign up!</a>
       
 
 
-    <% if session[:user_id] %>
-      <a href="/sign-out">Log Out</a>
-    <% else %>
-      <a href="/sign_in">Log In</a>
-    <% end %>
-
-
-
-
-    <h1>All my posts</h1>
-    <ul class="main-feed">
-      <% @posts.each do |post| %>
-        <li class="all-posts"><%= post.body %></a> 
-        
+      <% if session[:user_id] %>
+        <a href="/sign-out">Log Out</a>
+      <% else %>
+        <a href="/sign_in">Log In</a>
       <% end %>
-    </ul>
 
+   
 
     <% if session[:user_id] %>
     <form action="/posts" method="post">
@@ -48,5 +41,32 @@
       <button type="submit">Create Post</button>
     </form>
   <% end %>
+
+   </div>
+
+    
+
+<!-- The feed -->
+  
+  <div class="col-md-4">
+
+    <h1>All my posts</h1>
+    <ul class="main-feed">
+      <% @posts.each do |post| %>
+        <li class="all-posts"><%= post.body %></a> 
+        
+      <% end %>
+    </ul>
+
+  </div>
+
+<!-- End of the Feed -->
+    
+    <div class="col-md-4">
+      
+
+
+
+    </div>
 
  
