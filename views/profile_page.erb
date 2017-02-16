@@ -23,34 +23,30 @@
         <%= @user.bio %></textarea>
       </div>
 
+      <% if session[:user_id] %>
+        <form action="/posts" method="post">
+          <textarea type="text" name="body" id="body"></textarea>
+          <button type="submit">Create Post</button>
+        </form>
+      <% end %>
+
     </div>
     
     <div class="col-md-4">
 
-      <h1>
+      <h1 class="profile-name">
           
           <%= @user.fname %>'s Feed
           
       </h1>
         <ul class="feed">
           <% @user.posts.each do |post| %>
-            <li><%= post.body %></a>
+            <li class="profile-feed"><%= post.body %></a>
             <% end %>
         </ul>
 
 
-        <% if session[:user_id] %>
-        <form action="/posts" method="post">
-
-          <label for="body">Body</label>
-          <textarea type="text" name="body" id="body"  ></textarea>
-
-          <br />
-          <br />
-
-          <button type="submit">Create Post</button>
-        </form>
-      <% end %>
+    
 
     </div>
 

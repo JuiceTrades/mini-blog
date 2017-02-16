@@ -6,3 +6,54 @@
 .main-feed {
 	list-style: none;
 }
+
+.all-posts{
+	border: 2px solid black; 
+	padding-top: 3px;
+	margin-top: 10px;
+	text-align: center;
+
+}
+
+/*Navbar*/
+
+.controller {
+	width: 350px;
+	height: auto;
+	margin: 0 auto;
+	/*display: none;*/
+}
+
+
+
+.row-bg{
+	background-color: black;
+}
+
+.feed-header{
+	position: relative;
+	text-align: center;
+}
+
+.bio-box {
+	border: 1px solid black;
+
+}
+
+/*profile page*/
+
+.profile-name{
+	position: relative;
+	text-align: center;
+}
+
+.feed {
+	list-style: none;
+}
+
+.profile-feed{
+	border: 2px solid black; 
+	padding-top: 3px;
+	margin-top: 10px;
+	text-align: center;
+}
