@@ -1,0 +1,40 @@
+<% if session[:user_id] == @user.id%>
+
+	<form action="/users/details/<%= @user.id %>" method="post">
+		
+		<label for="fname">First Name:</label>
+		<input type="text" name="fname" id="fname" value="<%= @user.fname %>"> 
+
+		<label for="lname">Last Name:</label>
+		<input type="text" name="lname" id="lname" value="<%= @user.lname %>">
+
+		<label for="email">Email:</label>
+		<input type="text" name="email" id="email" value="<%= @user.email %>">
+
+		<label for="password">Password</label>
+		<input type="text" name="password" id="password" value="<%= @user.password %>">
+
+		<label for="state">State:</label>
+		<input type="text" name="state" id="state" value="<%= @user.state %>">
+
+		<label for="city">City:</label>
+		<input type="text" name="city" id="city" value="<%= @user.city %>">
+
+		<label for="bio">Bio:</label>
+		<textarea type="text" name="bio" id="bio"><%= @user.bio %></textarea>
+
+		<label for="games">Games:</label>
+		<input type="text" name="games" id="games" value="<%= @user.games %>">
+
+
+		<label for="website">Website:</label>
+		<input type="text" name="website" id="website" value="<%= current_user.website %>">
+
+		<button type="submit">Submit</button>
+
+
+
+
+	</form>
+
+	<% end %>

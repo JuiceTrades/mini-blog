@@ -11,6 +11,9 @@
       Now logged in as: <%= current_user.fname %>
     <% end %>
 
+  
+      <a href="/users/details/<%= session[:user_id] %>">Edit Profile</a>
+      
 
 
     <% if session[:user_id] %>
@@ -33,11 +36,6 @@
 
     <% if session[:user_id] %>
     <form action="/posts" method="post">
-      <label for="title">Title</label>
-      <input type="text" name="title" id="title"  />
-
-      <br />
-      <br />
 
       <label for="body">Body</label>
       <textarea type="text" name="body" id="body"  ></textarea>

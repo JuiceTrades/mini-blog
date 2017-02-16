@@ -61,6 +61,32 @@ post "/posts/edit/:id" do
 	redirect "posts/#{@post.id}"
 end
 
+get "/users/details/:id" do
+	@user = User.find(params[:id])
+	erb :edit_profile
+
+end
+
+
+post "/users/details/:id" do
+	user = User.find(params[:id])
+
+	user.update_attributes(fname: params[:fname],
+							:lname => params[:lname],
+							:email => params[:email],
+							:password => params[:password],
+							:bio => params[:bio],
+							:state => params[:state],
+							:city => params[:city],
+							:website => params[:website],
+							:games => params[:games]
+)
+
+	flash[:notice] = "You've updated your account details!"
+
+	redirect "/users/details/#{user.id}"
+end
+
 get "/sign_in" do
 	erb :sign_in
 end

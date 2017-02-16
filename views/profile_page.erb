@@ -11,13 +11,18 @@
 
   <body>
 
-    <textarea type="text" name="bio" id="bio"></textarea>
-
+    
 
 
     <% if current_user %>
      Hello, <%= current_user.fname %>
     <% end %>
+
+    <div class="bio-box" style="height: 200px; width: 200px;">
+      <h4>Bio</h4>
+      <%= @user.bio %></textarea>
+    </div>
+
 
   <h1>
       
