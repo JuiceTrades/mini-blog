@@ -24,8 +24,15 @@
             </li>
           </ul>
            <ul class="nav navbar-nav navbar-right">
-              <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-              <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              <li><a href="/sign-up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              
+              <li>
+                <% if session[:user_id] %>
+              <a href="/sign-out"><span class="glypicon-log-out">Log out</span></a>
+                <% else %>
+                <a href="/sign_in"><span class="glyphicon glyphicon-log-in"> Login</span>
+                <% end %>
+                </a></li>
             </ul>        
       </div>
     </nav>
