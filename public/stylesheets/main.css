@@ -15,6 +15,19 @@
 
 }
 
+.featured-video{
+	margin-left: 100px;
+
+}
+.main-call{
+	margin-left: 150px;
+
+}
+.call-out{
+	margin-left: 60px;
+	width: 500px;
+}
+
 /*Navbar*/
 
 .controller {
@@ -57,3 +70,28 @@
 	margin-top: 10px;
 	text-align: center;
 }
+
+/*parallax */
+.parallax { 
+    /* The image used */
+    background-image: url("../images/contact2.jpg");
+
+    /* Set a specific height */
+    height: 470px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;  
+  
+}
+
+/*  <div class="parallax">
+                <div class="content">
+                <h2>Featured Video!</h2>
+                <p></p>
+                </div>
+
+   </div>*/
+
