@@ -27,14 +27,18 @@
 
       <div class="col-md-4">
 
+
+
         <h1 class="feed-header">FEEDERS</h1>
         <ul class="main-feed">
           <% @posts.each do |post| %>
         <li class="all-posts"><%= post.body %></a> 
+
           <% end %>
         
       
       </ul>
+
 
       <div class="col-md-4">
         
@@ -45,20 +49,21 @@
 
         <div class="row">
 
+         <a href="/sign-up">
           <div class="parallax">
-                <div class="content">
-                
-                <p></p>
-                </div>
+             <div class="content">
+                <h3>->Click to join the community and grow your fanbase!<-</h3>
+                </div>      
 
          </div>
+         </a>
 
     
-          <div class="col-md-6">
+          <div class="col-md-6 featured">
               <iframe  class="featured-video" width="560" height="315" src="https://www.youtube.com/embed/O5HiFJxoIS4" frameborder="0" allowfullscreen></iframe>
           </div>
 
-          <div class="col-md-6">
+          <div class="col-md-6 featured">
             <h1 class="main-call">Featured Video</h1>
             <h4 class="call-out"> Upload your content today and become feature on the front page. We randomly pick a new feature every week!</h4>
 

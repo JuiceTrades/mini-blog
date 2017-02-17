@@ -89,6 +89,17 @@
   
 }
 
+.content{
+	padding-top: 330px;
+	padding-left: 450px;
+	color: white
+
+}
+/*Home page styling*/
+.featured{
+	margin-top: 60px;
+}
+
 /*account details page*/
 
 .details {
@@ -109,5 +120,4 @@
 .sign-in{
 	border: 2px solid black;
 }
-
 

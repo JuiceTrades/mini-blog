@@ -61,6 +61,14 @@ post "/posts/edit/:id" do
 	redirect "posts/#{@post.id}"
 end
 
+get "posts/delete/:id" do
+	post = Post.find(params[:id]).destroy
+
+	redirect "/"
+
+
+end
+
 get "/users/details/:id" do
 	@user = User.find(params[:id])
 	erb :edit_profile
@@ -129,6 +137,7 @@ end
 get "/users/delete/:id" do
 	session.clear
 	user = User.find(params[:id]).destroy
+	post = Post.find(params[:id]).destroy
 
 	redirect "/"
 
