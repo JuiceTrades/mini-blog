@@ -5,23 +5,28 @@
 
       <% if session[:user_id] %>
         <div class="col-md-4">
-        Welcome, <%= current_user.fname %>
-        <br>
-          <a href="/users/details/<%= current_user.id %>">Edit Profile</a>
-          <a href="/users/delete/<%= current_user.id %>">Delete Account</a>
+          
+          <div class="welcome-user">
+
+
+            Welcome, <%= current_user.fname %>
+            <br>
+              <a href="/users/details/<%= current_user.id %>">Edit Profile</a>
+              <a href="/users/delete/<%= current_user.id %>">Delete Account</a>
+            
+            <form action="/posts" method="post">
+
         
-        <form action="/posts" method="post">
+              <textarea type="text" name="body" id="body"  ></textarea>
 
-    
-          <textarea type="text" name="body" id="body"  ></textarea>
+                    <br />
+                    <br />
 
-                <br />
-                <br />
-
-          <button type="submit">Create Post</button>
-          </form>
-         
-      </div>
+              <button type="submit">Create Post</button>
+              </form>
+          </div>      
+             
+       </div>
 
     
 
@@ -33,14 +38,28 @@
         <ul class="main-feed">
           <% @posts.each do |post| %>
         <li class="all-posts"><%= post.body %></a> 
+        <% if session[:user_id] %>
+        <a href="posts/delete/">Delete</a>
+        <% end %>
 
           <% end %>
         
       
       </ul>
 
+      </div>
 
       <div class="col-md-4">
+      
+      <div class="user-box">
+          <h1>User List</h1>
+      <ul class="user-list">
+          <% @users.each do |user| %>
+          <a href="/users/<%= user.id %>"><li class="list-users"><%= user.fname %></li></a>
+          <% end %>
+
+      </ul>
+      </div>
         
       </div>
 

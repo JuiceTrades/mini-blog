@@ -28,6 +28,24 @@
 	width: 500px;
 }
 
+.user-list{
+	list-style: none;
+	margin-top: 50px;
+}
+
+.user-box {
+	margin-left: 30px;
+	border: 2px solid black;
+	padding-left: 150px;
+	height: 100%;
+	margin-top: 50px;
+}
+
+.welcome-user{
+	margin-left: 100px;
+	margin-top: 50px;
+}
+
 /*Navbar*/
 
 .controller {
