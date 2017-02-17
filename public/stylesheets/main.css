@@ -9,10 +9,10 @@
 
 .all-posts{
 	border: 2px solid black; 
-	padding-top: 3px;
+	padding-top: 50px;
 	margin-top: 10px;
 	text-align: center;
-
+	padding-bottom: 50px;
 }
 
 .featured-video{
@@ -74,7 +74,7 @@
 /*parallax */
 .parallax { 
     /* The image used */
-    background-image: url("../images/contact2.jpg");
+    background-image: url("/images/press-start.jpg");
 
     /* Set a specific height */
     height: 470px; 
@@ -84,14 +84,30 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;  
+
+    margin-top: 100px;
   
 }
 
-/*  <div class="parallax">
-                <div class="content">
-                <h2>Featured Video!</h2>
-                <p></p>
-                </div>
+/*account details page*/
 
-   </div>*/
+.details {
+	display: block;
+	padding-top: 20px;
+}
+
+.detail-button{
+	
+}
+
+.account-details{
+	margin-left: 100px;
+}
+
+/*login*/
+
+.sign-in{
+	border: 2px solid black;
+}
+
 

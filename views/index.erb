@@ -1,36 +1,73 @@
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ 
 
-    <title>Dylan's Page</title>
-  </head>
-
-  <body>
-
-  <div class="row">
-    
-    <div class="col-md-6">
-        <iframe  class="featured-video" width="560" height="315" src="https://www.youtube.com/embed/O5HiFJxoIS4" frameborder="0" allowfullscreen></iframe>
-    </div>
-
-    <div class="col-md-6">
-        <h1 class="main-call">Featured Video</h1>
-        <h4 class="call-out"> Upload your content today and become feature on the front page. We randomly pick a new feature every week!</h4>
-
-    </div>
-
-    </div>
+  
 
 
-    <div class="col-md-4">    
       <% if session[:user_id] %>
+        <div class="col-md-4">
         Welcome, <%= current_user.fname %>
         <br>
           <a href="/users/details/<%= current_user.id %>">Edit Profile</a>
           <a href="/users/delete/<%= current_user.id %>">Delete Account</a>
+        
+        <form action="/posts" method="post">
+
+    
+          <textarea type="text" name="body" id="body"  ></textarea>
+
+                <br />
+                <br />
+
+          <button type="submit">Create Post</button>
+          </form>
+         
+      </div>
+
+    
+
+      <div class="col-md-4">
+
+        <h1 class="feed-header">FEEDERS</h1>
+        <ul class="main-feed">
+          <% @posts.each do |post| %>
+        <li class="all-posts"><%= post.body %></a> 
+          <% end %>
+        
+      
+      </ul>
+
+      <div class="col-md-4">
+        
+      </div>
+
       <% else %>
-      <h1>Welcome to GamR</h1>
+        
+
+        <div class="row">
+
+          <div class="parallax">
+                <div class="content">
+                <h2>Featured Video!</h2>
+                <p></p>
+                </div>
+
+         </div>
+
+    
+          <div class="col-md-6">
+              <iframe  class="featured-video" width="560" height="315" src="https://www.youtube.com/embed/O5HiFJxoIS4" frameborder="0" allowfullscreen></iframe>
+          </div>
+
+          <div class="col-md-6">
+            <h1 class="main-call">Featured Video</h1>
+            <h4 class="call-out"> Upload your content today and become feature on the front page. We randomly pick a new feature every week!</h4>
+
+          </div>
+
+        </div>
        
-      <% end %>
+    <% end %>
+      
 
 
 
@@ -38,44 +75,11 @@
 
    
 
-    <% if session[:user_id] %>
-    <form action="/posts" method="post">
-
-    
-      <textarea type="text" name="body" id="body"  ></textarea>
-
-      <br />
-      <br />
-
-      <button type="submit">Create Post</button>
-    </form>
-  <% end %>
-
-   </div>
-
-    
-
-<!-- The feed -->
   
-  <div class="col-md-4">
 
-    <h1 class="feed-header">FEEDERS</h1>
-    <ul class="main-feed">
-      <% @posts.each do |post| %>
-        <li class="all-posts"><%= post.body %></a> 
-        
-      <% end %>
-    </ul>
 
-  </div>
-
-<!-- End of the Feed -->
     
-    <div class="col-md-4">
-      
 
 
-
-    </div>
 
  

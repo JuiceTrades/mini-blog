@@ -1,36 +1,52 @@
+<div class="col-md-4 c-1">
+	
+</div>
+
+
+
+<div class="col-md-4">
 <% if session[:user_id] == @user.id%>
+		
+		<h1>Edit your account details!</h1>
 
 	<form action="/users/details/<%= @user.id %>" method="post">
 		
-		<label for="fname">First Name:</label>
+	  <div class="account-details">
+		<label class="details" for="fname">First Name:</label>
 		<input type="text" name="fname" id="fname" value="<%= @user.fname %>"> 
 
-		<label for="lname">Last Name:</label>
+		<label class="details" for="lname">Last Name:</label>
 		<input type="text" name="lname" id="lname" value="<%= @user.lname %>">
 
-		<label for="email">Email:</label>
+		<label class="details for="email">Email:</label>
 		<input type="text" name="email" id="email" value="<%= @user.email %>">
 
-		<label for="password">Password</label>
+		<label class="details for="password">Password</label>
 		<input type="text" name="password" id="password" value="<%= @user.password %>">
 
-		<label for="state">State:</label>
+		<label class="details for="state">State:</label>
 		<input type="text" name="state" id="state" value="<%= @user.state %>">
 
-		<label for="city">City:</label>
+		<label class="details for="city">City:</label>
 		<input type="text" name="city" id="city" value="<%= @user.city %>">
 
-		<label for="bio">Bio:</label>
+		<label class="details for="bio">Bio:</label>
 		<textarea type="text" name="bio" id="bio"><%= @user.bio %></textarea>
 
-		<label for="games">Games:</label>
+		<label class="details for="games">Games:</label>
 		<input type="text" name="games" id="games" value="<%= @user.games %>">
 
 
-		<label for="website">Website:</label>
-		<input type="text" name="website" id="website" value="<%= current_user.website %>">
+		<label class="details" for="website">Website:</label>
+		<input type="text" name="website" id="website" value="<%= @user.website %>">
 
-		<button type="submit">Submit</button>
+		<hr>
+
+
+
+		<button class="detail-button" type="submit">Submit</button>
+
+	</div>
 
 
 
@@ -38,3 +54,9 @@
 	</form>
 
 	<% end %>
+</div>
+
+<div class="col-md-4 c-1">
+	
+
+</div>
