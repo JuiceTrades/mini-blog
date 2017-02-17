@@ -18,6 +18,14 @@ get "/" do
 	
 end
 
+post '/videos' do 
+	video = Video.new
+
+	video.embed = params["embed"]
+	video.user_id = current_user.id
+end
+
+
 post '/posts' do
 	post = Post.new
 
@@ -62,7 +70,7 @@ post "/posts/edit/:id" do
 end
 
 get "posts/delete/:id" do
-	post = Post.find(params[:id]).destroy
+	Post.find(params[:id]).destroy
 
 	redirect "/"
 
@@ -131,13 +139,14 @@ post "/sign-up" do
 	@user = User.create(fname: params["first_name"], lname: params["last_name"], email: params["email_add"], password: params["password"])
 
 
-	redirect "/"
+	redirect "/sign_in"
 end
 
 get "/users/delete/:id" do
 	session.clear
+	post = User.find(params[:id]).posts.destroy_all
 	user = User.find(params[:id]).destroy
-	post = Post.find(params[:id]).destroy
+	
 
 	redirect "/"
 

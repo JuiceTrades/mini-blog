@@ -1,6 +1,6 @@
  
 
-  
+    
 
 
       <% if session[:user_id] %>
@@ -39,7 +39,7 @@
           <% @posts.each do |post| %>
         <li class="all-posts"><%= post.body %></a> 
         <% if session[:user_id] %>
-        <a href="posts/delete/">Delete</a>
+        <a href="posts/delete/<%= post.id %>">Delete</a>
         <% end %>
 
           <% end %>
